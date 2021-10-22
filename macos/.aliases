@@ -1,5 +1,0 @@
-alias grep='grep --color=auto'
-alias hg='history | grep'
-alias lll='ls -lahtr'
-alias falln='sudo find / -name'
-alias fallin='sudo find / -iname'
