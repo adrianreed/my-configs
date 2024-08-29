@@ -1,15 +1,15 @@
-# colors
+#!/bin/bash
+
+# customize bash prompt
+
+white='\e[0;37m\]'
 red='\[\e[0;31m\]'
 yellow='\[\e[0;33m\]'
 green='\[\e[0;32m\]'
-blue='\[\e[0;34m\]'
-white='\e[0;37m\]'
 nc='\[\e[0m\]'
 
-# prompt
-PS1="${white}\\u at ${red}[\\W] ${yellow}\$(git_branch)\n${green}$ ${nc}"
-
-git_branch() {
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+get_git_branch() {
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-export -f parse_git_branch
+
+PS1="${white}\\u ${red}[\\W] ${yellow}\$(get_git_branch) ${green}$ ${nc}"
