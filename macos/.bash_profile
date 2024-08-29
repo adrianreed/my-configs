@@ -5,8 +5,8 @@ for file in ~/.{bash_prompt,bash_aliases}; do
 done
 unset file
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
