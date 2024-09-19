@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Disable bracketed paste mode
+bind 'set enable-bracketed-paste off'
+
 # Executed when running interactively
 [[ $- == *i* ]] || return
 
